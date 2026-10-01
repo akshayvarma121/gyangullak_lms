@@ -5,8 +5,16 @@ describe('brand config', () => {
   it('should have all feature names in both languages', () => {
     const features = Object.values(brandConfig.features);
     for (const feature of features) {
-      expect(feature.hi).toBeTruthy();
-      expect(feature.en).toBeTruthy();
+      if ('hi' in feature) {
+        expect((feature as any).hi).toBeTruthy();
+        expect((feature as any).en).toBeTruthy();
+      } else {
+        const nestedFeatures = Object.values(feature);
+        for (const nested of nestedFeatures) {
+          expect((nested as any).hi).toBeTruthy();
+          expect((nested as any).en).toBeTruthy();
+        }
+      }
     }
   });
 

@@ -1,0 +1,339 @@
+id: 'ch-8-math-algebra'
+title:
+  en: 'Linear Equations in One Variable'
+  hi: 'एक चर वाले रैखिक समीकरण'
+subject: 'Mathematics'
+class_level: 8
+skills:
+  - id: 'math-8-a-solve'
+    name:
+      en: 'Solve linear equations'
+      hi: 'रैखिक समीकरण हल करें'
+  - id: 'math-8-a-form'
+    name:
+      en: 'Form equations from words'
+      hi: 'शब्दों से समीकरण बनाएँ'
+lessons:
+  - id: 'les-8-a-1'
+    title:
+      en: 'What is a Linear Equation?'
+      hi: 'रैखिक समीकरण क्या है?'
+    content:
+      en: 'An equation with only one variable, and its highest power is 1, is called a linear equation in one variable.'
+      hi: 'केवल एक चर वाले समीकरण को, जिसकी अधिकतम घात 1 हो, एक चर वाला रैखिक समीकरण कहा जाता है।'
+questions:
+  - id: 'q-8-a-1'
+    skill: 'math-8-a-solve'
+    difficulty: 'easy'
+    text:
+      en: 'Solve for x: x - 2 = 7'
+      hi: 'x का मान ज्ञात करें: x - 2 = 7'
+    options:
+      - en: '5'
+        hi: '5'
+      - en: '9'
+        hi: '9'
+      - en: '14'
+        hi: '14'
+      - en: '4'
+        hi: '4'
+    correct_index: 1
+    explanation:
+      en: 'x = 7 + 2 = 9'
+      hi: 'x = 7 + 2 = 9'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-2'
+    skill: 'math-8-a-solve'
+    difficulty: 'easy'
+    text:
+      en: 'Solve for y: 3y = 15'
+      hi: 'y का मान ज्ञात करें: 3y = 15'
+    options:
+      - en: '3'
+        hi: '3'
+      - en: '5'
+        hi: '5'
+      - en: '12'
+        hi: '12'
+      - en: '45'
+        hi: '45'
+    correct_index: 1
+    explanation:
+      en: 'Divide both sides by 3: y = 15 / 3 = 5.'
+      hi: 'दोनों पक्षों को 3 से विभाजित करें: y = 15 / 3 = 5.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-3'
+    skill: 'math-8-a-solve'
+    difficulty: 'medium'
+    text:
+      en: 'Solve for z: z / 2 = 8'
+      hi: 'z का मान ज्ञात करें: z / 2 = 8'
+    options:
+      - en: '4'
+        hi: '4'
+      - en: '10'
+        hi: '10'
+      - en: '16'
+        hi: '16'
+      - en: '6'
+        hi: '6'
+    correct_index: 2
+    explanation:
+      en: 'Multiply both sides by 2: z = 8 * 2 = 16.'
+      hi: 'दोनों पक्षों को 2 से गुणा करें: z = 8 * 2 = 16.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-4'
+    skill: 'math-8-a-solve'
+    difficulty: 'medium'
+    text:
+      en: 'Solve for x: 2x - 3 = 7'
+      hi: 'x का मान ज्ञात करें: 2x - 3 = 7'
+    options:
+      - en: '2'
+        hi: '2'
+      - en: '5'
+        hi: '5'
+      - en: '10'
+        hi: '10'
+      - en: '4'
+        hi: '4'
+    correct_index: 1
+    explanation:
+      en: '2x = 7 + 3 -> 2x = 10 -> x = 5.'
+      hi: '2x = 7 + 3 -> 2x = 10 -> x = 5.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-5'
+    skill: 'math-8-a-form'
+    difficulty: 'medium'
+    text:
+      en: "Which equation represents 'Five less than twice a number is 9'?"
+      hi: "कौन सा समीकरण 'किसी संख्या के दोगुने से पांच कम 9 है' को दर्शाता है?"
+    options:
+      - en: '5 - 2x = 9'
+        hi: '5 - 2x = 9'
+      - en: '2x - 5 = 9'
+        hi: '2x - 5 = 9'
+      - en: '2(x - 5) = 9'
+        hi: '2(x - 5) = 9'
+      - en: 'x - 5 = 9'
+        hi: 'x - 5 = 9'
+    correct_index: 1
+    explanation:
+      en: 'Twice a number is 2x. Five less is 2x - 5.'
+      hi: 'एक संख्या का दोगुना 2x है। पांच कम 2x - 5 है।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-6'
+    skill: 'math-8-a-solve'
+    difficulty: 'medium'
+    text:
+      en: 'Solve: 5x + 9 = 5 + 3x'
+      hi: 'हल करें: 5x + 9 = 5 + 3x'
+    options:
+      - en: '-2'
+        hi: '-2'
+      - en: '2'
+        hi: '2'
+      - en: '7'
+        hi: '7'
+      - en: '-7'
+        hi: '-7'
+    correct_index: 0
+    explanation:
+      en: '5x - 3x = 5 - 9 -> 2x = -4 -> x = -2.'
+      hi: '5x - 3x = 5 - 9 -> 2x = -4 -> x = -2.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-7'
+    skill: 'math-8-a-form'
+    difficulty: 'medium'
+    text:
+      en: 'The sum of three consecutive integers is 51. What is the smallest integer?'
+      hi: 'तीन लगातार पूर्णांकों का योग 51 है। सबसे छोटा पूर्णांक क्या है?'
+    options:
+      - en: '15'
+        hi: '15'
+      - en: '16'
+        hi: '16'
+      - en: '17'
+        hi: '17'
+      - en: '18'
+        hi: '18'
+    correct_index: 1
+    explanation:
+      en: 'x + (x+1) + (x+2) = 51 -> 3x + 3 = 51 -> 3x = 48 -> x = 16.'
+      hi: 'x + (x+1) + (x+2) = 51 -> 3x + 3 = 51 -> 3x = 48 -> x = 16.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-8'
+    skill: 'math-8-a-solve'
+    difficulty: 'hard'
+    text:
+      en: 'Solve for x: x/3 + 1 = 7/15'
+      hi: 'x का मान ज्ञात करें: x/3 + 1 = 7/15'
+    options:
+      - en: '-8/5'
+        hi: '-8/5'
+      - en: '8/5'
+        hi: '8/5'
+      - en: '-2/5'
+        hi: '-2/5'
+      - en: '2/5'
+        hi: '2/5'
+    correct_index: 0
+    explanation:
+      en: 'x/3 = 7/15 - 1 = 7/15 - 15/15 = -8/15. x = 3 * (-8/15) = -8/5.'
+      hi: 'x/3 = 7/15 - 1 = 7/15 - 15/15 = -8/15. x = 3 * (-8/15) = -8/5.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-9'
+    skill: 'math-8-a-form'
+    difficulty: 'hard'
+    text:
+      en: 'Ahman is twice as old as his brother. In 5 years, the sum of their ages will be 34. How old is his brother now?'
+      hi: 'अहमद अपने भाई से दोगुनी उम्र का है। 5 वर्षों में, उनकी आयु का योग 34 होगा। उसका भाई अभी कितने वर्ष का है?'
+    options:
+      - en: '6'
+        hi: '6'
+      - en: '8'
+        hi: '8'
+      - en: '10'
+        hi: '10'
+      - en: '12'
+        hi: '12'
+    correct_index: 1
+    explanation:
+      en: 'Brother=x, Ahman=2x. (x+5) + (2x+5) = 34 -> 3x + 10 = 34 -> 3x = 24 -> x = 8.'
+      hi: 'भाई=x, अहमद=2x. (x+5) + (2x+5) = 34 -> 3x + 10 = 34 -> 3x = 24 -> x = 8.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-10'
+    skill: 'math-8-a-solve'
+    difficulty: 'easy'
+    text:
+      en: 'Is y = 2 a solution to the equation 3y + 4 = 10?'
+      hi: 'क्या y = 2 समीकरण 3y + 4 = 10 का हल है?'
+    options:
+      - en: 'Yes'
+        hi: 'हाँ'
+      - en: 'No'
+        hi: 'नहीं'
+      - en: 'Only sometimes'
+        hi: 'केवल कभी-कभी'
+      - en: 'Cannot be determined'
+        hi: 'निर्धारित नहीं किया जा सकता'
+    correct_index: 0
+    explanation:
+      en: 'Substitute y=2: 3(2) + 4 = 6 + 4 = 10. Yes, it matches.'
+      hi: 'y=2 रखें: 3(2) + 4 = 6 + 4 = 10. हाँ, यह मेल खाता है।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-11'
+    skill: 'math-8-a-solve'
+    difficulty: 'medium'
+    text:
+      en: 'Solve: 2(x + 3) = 14'
+      hi: 'हल करें: 2(x + 3) = 14'
+    options:
+      - en: '10'
+        hi: '10'
+      - en: '4'
+        hi: '4'
+      - en: '7'
+        hi: '7'
+      - en: '5'
+        hi: '5'
+    correct_index: 1
+    explanation:
+      en: 'x + 3 = 14 / 2 = 7 -> x = 7 - 3 = 4.'
+      hi: 'x + 3 = 14 / 2 = 7 -> x = 7 - 3 = 4.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-12'
+    skill: 'math-8-a-form'
+    difficulty: 'medium'
+    text:
+      en: 'If you subtract 1/2 from a number and multiply the result by 1/2, you get 1/8. What is the number?'
+      hi: 'यदि आप किसी संख्या में से 1/2 घटाते हैं और परिणाम को 1/2 से गुणा करते हैं, तो आपको 1/8 मिलता है। वह संख्या क्या है?'
+    options:
+      - en: '1/4'
+        hi: '1/4'
+      - en: '3/4'
+        hi: '3/4'
+      - en: '1/2'
+        hi: '1/2'
+      - en: '5/4'
+        hi: '5/4'
+    correct_index: 1
+    explanation:
+      en: '1/2 * (x - 1/2) = 1/8 -> x - 1/2 = 2/8 = 1/4 -> x = 1/4 + 1/2 = 3/4.'
+      hi: '1/2 * (x - 1/2) = 1/8 -> x - 1/2 = 2/8 = 1/4 -> x = 1/4 + 1/2 = 3/4.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-13'
+    skill: 'math-8-a-solve'
+    difficulty: 'hard'
+    text:
+      en: 'Solve for x: (2x - 3) / 5 = x / 2'
+      hi: 'x का मान ज्ञात करें: (2x - 3) / 5 = x / 2'
+    options:
+      - en: '6'
+        hi: '6'
+      - en: '-6'
+        hi: '-6'
+      - en: '3'
+        hi: '3'
+      - en: '5'
+        hi: '5'
+    correct_index: 1
+    explanation:
+      en: 'Cross multiply: 2(2x - 3) = 5x -> 4x - 6 = 5x -> -6 = x.'
+      hi: 'तिर्यक गुणा करें: 2(2x - 3) = 5x -> 4x - 6 = 5x -> -6 = x.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-14'
+    skill: 'math-8-a-form'
+    difficulty: 'hard'
+    text:
+      en: 'A number is such that its two-third is equal to its half plus 5. The number is:'
+      hi: 'एक संख्या ऐसी है कि उसका दो-तिहाई उसके आधे से 5 अधिक है। संख्या है:'
+    options:
+      - en: '15'
+        hi: '15'
+      - en: '20'
+        hi: '20'
+      - en: '30'
+        hi: '30'
+      - en: '10'
+        hi: '10'
+    correct_index: 2
+    explanation:
+      en: '2/3 x = 1/2 x + 5 -> (4x - 3x)/6 = 5 -> x/6 = 5 -> x = 30.'
+      hi: '2/3 x = 1/2 x + 5 -> (4x - 3x)/6 = 5 -> x/6 = 5 -> x = 30.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-a-15'
+    skill: 'math-8-a-solve'
+    difficulty: 'medium'
+    text:
+      en: 'Solve: 8x = 20 + 3x'
+      hi: 'हल करें: 8x = 20 + 3x'
+    options:
+      - en: '5'
+        hi: '5'
+      - en: '4'
+        hi: '4'
+      - en: '10'
+        hi: '10'
+      - en: '2'
+        hi: '2'
+    correct_index: 1
+    explanation:
+      en: '8x - 3x = 20 -> 5x = 20 -> x = 4.'
+      hi: '8x - 3x = 20 -> 5x = 20 -> x = 4.'
+    provenance: 'Original'
+    review_status: 'draft'

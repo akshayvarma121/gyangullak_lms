@@ -2,5 +2,17 @@
   "name": "@chalk/content",
   "version": "0.0.0",
   "main": "src/index.ts",
-  "types": "src/index.ts"
+  "types": "src/index.ts",
+  "dependencies": {
+    "yaml": "^2.9.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsx": "^4.23.15"
+  },
+  "scripts": {
+    "validate": "tsx bin/validate.ts content",
+    "build": "tsx bin/build.ts content dist"
+  }
 }

@@ -6,6 +6,8 @@
     { "path": "./packages/content" },
     { "path": "./packages/ui" },
     { "path": "./apps/student" },
-    { "path": "./apps/hub" }
+    { "path": "./apps/hub" },
+    { "path": "./supabase" },
+    { "path": "./scripts" }
   ]
 }

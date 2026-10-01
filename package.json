@@ -4,11 +4,15 @@
   "private": true,
   "scripts": {
     "test": "vitest run",
+    "test:integration": "vitest run supabase/tests/integration.test.ts",
     "typecheck": "tsc --build tsconfig.json",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test"
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm check:names && pnpm test",
+    "check:names": "node scripts/check-names.js",
+    "content:validate": "pnpm -F @chalk/content run validate",
+    "content:build": "pnpm -F @chalk/content run build"
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",
@@ -23,5 +27,8 @@
   "engines": {
     "node": ">=20.0.0",
     "pnpm": ">=9.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.2"
   }
 }

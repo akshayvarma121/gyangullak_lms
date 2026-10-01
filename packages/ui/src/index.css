@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  src: url('/fonts/NotoSansDevanagari-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  src: url('/fonts/NotoSansDevanagari-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --c-primary: #D35400;
+  --c-primary-active: #A04000;
+  --c-bg: #FFFFFF;
+  --c-surface: #F0F3F4;
+  --c-surface-hover: #E5E8E8;
+  --c-text: #17202A;
+  --c-text-muted: #566573;
+  --c-success: #27AE60;
+  --c-warning: #F39C12;
+  --c-error: #C0392B;
+  
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  --font-base: 'Noto Sans Devanagari', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  font-size: 18px; /* minimum 16px, going larger for children */
+}
+
+/* Button */
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-base);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  min-height: 48px; /* Touch target minimum */
+  min-width: 48px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.ui-button:active { transform: scale(0.98); }
+.ui-button--primary { background: var(--c-primary); color: #fff; }
+.ui-button--primary:active { background: var(--c-primary-active); }
+.ui-button--secondary { background: var(--c-surface); color: var(--c-text); }
+.ui-button--secondary:active { background: var(--c-surface-hover); }
+
+/* Card */
+.ui-card {
+  background: var(--c-bg);
+  border: 2px solid var(--c-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+/* Sync Badge */
+.ui-sync-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.ui-sync-badge--synced { background: #E8F8F5; color: var(--c-success); }
+.ui-sync-badge--pending { background: #FEF5E7; color: var(--c-warning); }
+.ui-sync-badge--offline { background: var(--c-surface); color: var(--c-text-muted); }
+
+/* Empty / Error State */
+.ui-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  gap: var(--space-3);
+}
+.ui-state-title { font-size: 1.5rem; font-weight: 700; margin: 0; }
+.ui-state-desc { color: var(--c-text-muted); margin: 0; }
+.ui-state-icon { font-size: 3rem; }
+
+/* Layout utilities */
+.ui-flex-col { display: flex; flex-direction: column; }
+.ui-flex-row { display: flex; flex-direction: row; }
+.ui-items-center { align-items: center; }
+.ui-justify-center { justify-content: center; }
+.ui-justify-between { justify-content: space-between; }
+.ui-gap-2 { gap: var(--space-2); }
+.ui-gap-4 { gap: var(--space-4); }
+.ui-gap-6 { gap: var(--space-6); }
+.ui-p-4 { padding: var(--space-4); }
+.ui-min-h-screen { min-height: 100vh; }
+.ui-text-center { text-align: center; }
+.ui-text-2xl { font-size: 1.5rem; font-weight: bold; margin: 0; }
+.ui-text-xl { font-size: 1.25rem; font-weight: bold; margin: 0; }
+.ui-mb-2 { margin-bottom: var(--space-2); }

@@ -8,49 +8,47 @@ export interface BrandConfig {
   tagline: LocalizedString;
   features: {
     quizzes: LocalizedString;
-    rewardsWallet: LocalizedString;
+    gullak: {
+      name: LocalizedString;
+      points: LocalizedString;
+    };
     offlineLibrary: LocalizedString;
     weeklyReport: LocalizedString;
-    pointsCurrency: LocalizedString;
   };
 }
 
 export const brandConfig: BrandConfig = {
   productName: {
-    hi: 'चौक',
-    en: 'Chalk',
+    hi: 'ज्ञान गुल्लक', // needs_human_review
+    en: 'Gyan Gullak',
   },
   tagline: {
-    hi: 'ऑफ़लाइन-प्रथम शिक्षण और पुरस्कार',
+    hi: 'ऑफ़लाइन-प्रथम शिक्षण और पुरस्कार', // needs_human_review
     en: 'Offline-first learning and rewards',
   },
   features: {
     quizzes: {
-      hi: 'चतुर',
-      en: 'Chatur',
+      hi: 'चतुर', // needs_human_review
+      en: 'Daily Bounties',
     },
-    rewardsWallet: {
-      hi: 'गुल्लक',
-      en: 'Gullak',
+    gullak: {
+      name: {
+        hi: 'गुल्लक', // needs_human_review
+        en: 'Loot Bazaar',
+      },
+      points: {
+        hi: 'गुल्लक पॉइंट', // needs_human_review
+        en: 'Coins',
+      },
     },
     offlineLibrary: {
-      hi: 'बस्ता',
-      en: 'Basta',
+      hi: 'बस्ता', // needs_human_review
+      en: 'Godaam',
     },
     weeklyReport: {
-      hi: 'प्रगति पत्र',
-      en: 'Pragati Patra',
-    },
-    pointsCurrency: {
-      hi: 'विद्या पॉइंट्स',
-      en: 'Vidya Points',
+      hi: 'प्रगति पत्र', // needs_human_review
+      en: 'e-Report',
     },
   },
 };
 
-export function getFeatureName(
-  feature: keyof BrandConfig['features'],
-  lang: 'hi' | 'en',
-): string {
-  return brandConfig.features[feature][lang];
-}

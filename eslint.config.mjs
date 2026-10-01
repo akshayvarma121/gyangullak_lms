@@ -12,6 +12,8 @@ export default tseslint.config(
           './tsconfig.json',
           './packages/*/tsconfig.json',
           './apps/*/tsconfig.json',
+          './supabase/tsconfig.json',
+          './scripts/tsconfig.json',
         ],
         tsconfigRootDir: import.meta.dirname,
       },
@@ -27,6 +29,7 @@ export default tseslint.config(
       '**/coverage/**',
       'eslint.config.mjs',
       'vitest.workspace.ts',
+      'supabase/functions/**',
     ],
   },
 );

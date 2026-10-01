@@ -1,0 +1,343 @@
+id: 'ch-8-math-geometry'
+title:
+  en: 'Understanding Quadrilaterals and Geometry'
+  hi: 'चतुर्भुजों और रेखागणित को समझना'
+subject: 'Mathematics'
+class_level: 8
+skills:
+  - id: 'math-8-g-polygon'
+    name:
+      en: 'Identify polygons and their properties'
+      hi: 'बहुभुजों और उनके गुणों की पहचान'
+  - id: 'math-8-g-angles'
+    name:
+      en: 'Calculate angles in polygons'
+      hi: 'बहुभुजों में कोणों की गणना'
+  - id: 'math-8-g-quads'
+    name:
+      en: 'Properties of special quadrilaterals'
+      hi: 'विशेष चतुर्भुजों के गुण'
+lessons:
+  - id: 'les-8-g-1'
+    title:
+      en: 'Introduction to Polygons'
+      hi: 'बहुभुजों का परिचय'
+    content:
+      en: 'A polygon is a simple closed curve made up of only line segments.'
+      hi: 'एक बहुभुज केवल रेखाखंडों से बना एक साधारण बंद वक्र होता है।'
+questions:
+  - id: 'q-8-g-1'
+    skill: 'math-8-g-polygon'
+    difficulty: 'easy'
+    text:
+      en: 'Which of the following is not a polygon?'
+      hi: 'निम्नलिखित में से कौन सा बहुभुज नहीं है?'
+    options:
+      - en: 'Triangle'
+        hi: 'त्रिभुज'
+      - en: 'Circle'
+        hi: 'वृत्त'
+      - en: 'Square'
+        hi: 'वर्ग'
+      - en: 'Pentagon'
+        hi: 'पंचभुज'
+    correct_index: 1
+    explanation:
+      en: 'A circle is made of curves, not line segments.'
+      hi: 'वृत्त वक्रों से बना होता है, रेखाखंडों से नहीं।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-2'
+    skill: 'math-8-g-angles'
+    difficulty: 'easy'
+    text:
+      en: 'What is the sum of the interior angles of a quadrilateral?'
+      hi: 'एक चतुर्भुज के आंतरिक कोणों का योग क्या होता है?'
+    options:
+      - en: '180 degrees'
+        hi: '180 डिग्री'
+      - en: '360 degrees'
+        hi: '360 डिग्री'
+      - en: '540 degrees'
+        hi: '540 डिग्री'
+      - en: '90 degrees'
+        hi: '90 डिग्री'
+    correct_index: 1
+    explanation:
+      en: 'The sum of interior angles of a quadrilateral is always 360 degrees.'
+      hi: 'एक चतुर्भुज के आंतरिक कोणों का योग हमेशा 360 डिग्री होता है।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-3'
+    skill: 'math-8-g-quads'
+    difficulty: 'medium'
+    text:
+      en: 'In a parallelogram, opposite sides are:'
+      hi: 'एक समांतर चतुर्भुज में, सम्मुख भुजाएँ होती हैं:'
+    options:
+      - en: 'Equal and parallel'
+        hi: 'समान और समानांतर'
+      - en: 'Unequal and parallel'
+        hi: 'असमान और समानांतर'
+      - en: 'Equal and not parallel'
+        hi: 'समान और असमानांतर'
+      - en: 'Unequal and not parallel'
+        hi: 'असमान और असमानांतर'
+    correct_index: 0
+    explanation:
+      en: 'By definition, opposite sides of a parallelogram are equal and parallel.'
+      hi: 'परिभाषा के अनुसार, एक समांतर चतुर्भुज की सम्मुख भुजाएँ समान और समानांतर होती हैं।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-4'
+    skill: 'math-8-g-quads'
+    difficulty: 'medium'
+    text:
+      en: 'The diagonals of a rhombus bisect each other at what angle?'
+      hi: 'एक समचतुर्भुज के विकर्ण एक दूसरे को किस कोण पर समद्विभाजित करते हैं?'
+    options:
+      - en: '45 degrees'
+        hi: '45 डिग्री'
+      - en: '60 degrees'
+        hi: '60 डिग्री'
+      - en: '90 degrees'
+        hi: '90 डिग्री'
+      - en: '180 degrees'
+        hi: '180 डिग्री'
+    correct_index: 2
+    explanation:
+      en: 'Diagonals of a rhombus always bisect each other at right angles (90 degrees).'
+      hi: 'एक समचतुर्भुज के विकर्ण हमेशा एक दूसरे को समकोण (90 डिग्री) पर समद्विभाजित करते हैं।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-5'
+    skill: 'math-8-g-angles'
+    difficulty: 'hard'
+    text:
+      en: 'How many sides does a regular polygon have if each exterior angle is 24 degrees?'
+      hi: 'यदि एक सम बहुभुज का प्रत्येक बाह्य कोण 24 डिग्री है, तो उसमें कितनी भुजाएँ होंगी?'
+    options:
+      - en: '10'
+        hi: '10'
+      - en: '12'
+        hi: '12'
+      - en: '15'
+        hi: '15'
+      - en: '18'
+        hi: '18'
+    correct_index: 2
+    explanation:
+      en: 'Number of sides = 360 / exterior angle = 360 / 24 = 15.'
+      hi: 'भुजाओं की संख्या = 360 / बाह्य कोण = 360 / 24 = 15.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-6'
+    skill: 'math-8-g-polygon'
+    difficulty: 'easy'
+    text:
+      en: 'What is a polygon with 8 sides called?'
+      hi: '8 भुजाओं वाले बहुभुज को क्या कहा जाता है?'
+    options:
+      - en: 'Hexagon'
+        hi: 'षट्भुज'
+      - en: 'Heptagon'
+        hi: 'सप्तभुज'
+      - en: 'Octagon'
+        hi: 'अष्टभुज'
+      - en: 'Decagon'
+        hi: 'दशभुज'
+    correct_index: 2
+    explanation:
+      en: 'An 8-sided polygon is an octagon.'
+      hi: '8 भुजाओं वाले बहुभुज को अष्टभुज कहा जाता है।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-7'
+    skill: 'math-8-g-angles'
+    difficulty: 'medium'
+    text:
+      en: 'What is the sum of the exterior angles of any convex polygon?'
+      hi: 'किसी भी उत्तल बहुभुज के बाह्य कोणों का योग क्या होता है?'
+    options:
+      - en: '180 degrees'
+        hi: '180 डिग्री'
+      - en: '360 degrees'
+        hi: '360 डिग्री'
+      - en: '540 degrees'
+        hi: '540 डिग्री'
+      - en: '720 degrees'
+        hi: '720 डिग्री'
+    correct_index: 1
+    explanation:
+      en: 'The sum of exterior angles of any convex polygon is always 360 degrees.'
+      hi: 'किसी भी उत्तल बहुभुज के बाह्य कोणों का योग हमेशा 360 डिग्री होता है।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-8'
+    skill: 'math-8-g-quads'
+    difficulty: 'easy'
+    text:
+      en: 'Which quadrilateral has all sides equal and all angles equal to 90 degrees?'
+      hi: 'किस चतुर्भुज की सभी भुजाएँ समान होती हैं और सभी कोण 90 डिग्री होते हैं?'
+    options:
+      - en: 'Rectangle'
+        hi: 'आयत'
+      - en: 'Rhombus'
+        hi: 'समचतुर्भुज'
+      - en: 'Square'
+        hi: 'वर्ग'
+      - en: 'Trapezium'
+        hi: 'समलंब'
+    correct_index: 2
+    explanation:
+      en: 'A square is a regular quadrilateral, meaning it has equal sides and equal angles.'
+      hi: 'एक वर्ग एक सम चतुर्भुज है, जिसका अर्थ है कि इसकी समान भुजाएँ और समान कोण होते हैं।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-9'
+    skill: 'math-8-g-quads'
+    difficulty: 'medium'
+    text:
+      en: 'In a rectangle, the diagonals are:'
+      hi: 'एक आयत में, विकर्ण होते हैं:'
+    options:
+      - en: 'Unequal and bisect each other'
+        hi: 'असमान और एक दूसरे को समद्विभाजित करते हैं'
+      - en: 'Equal and bisect each other'
+        hi: 'समान और एक दूसरे को समद्विभाजित करते हैं'
+      - en: 'Equal and perpendicular'
+        hi: 'समान और लंबवत'
+      - en: 'Unequal and perpendicular'
+        hi: 'असमान और लंबवत'
+    correct_index: 1
+    explanation:
+      en: 'The diagonals of a rectangle are equal in length and bisect each other.'
+      hi: 'एक आयत के विकर्णों की लंबाई समान होती है और वे एक दूसरे को समद्विभाजित करते हैं।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-10'
+    skill: 'math-8-g-polygon'
+    difficulty: 'medium'
+    text:
+      en: 'What is the minimum number of sides required to form a polygon?'
+      hi: 'एक बहुभुज बनाने के लिए कम से कम कितनी भुजाओं की आवश्यकता होती है?'
+    options:
+      - en: '2'
+        hi: '2'
+      - en: '3'
+        hi: '3'
+      - en: '4'
+        hi: '4'
+      - en: '5'
+        hi: '5'
+    correct_index: 1
+    explanation:
+      en: 'A polygon is a closed shape, so at least 3 sides are needed (a triangle).'
+      hi: 'एक बहुभुज एक बंद आकृति है, इसलिए कम से कम 3 भुजाओं की आवश्यकता होती है (एक त्रिभुज)।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-11'
+    skill: 'math-8-g-angles'
+    difficulty: 'hard'
+    text:
+      en: 'Three angles of a quadrilateral are 70, 80, and 90 degrees. What is the fourth angle?'
+      hi: 'एक चतुर्भुज के तीन कोण 70, 80 और 90 डिग्री हैं। चौथा कोण क्या है?'
+    options:
+      - en: '100 degrees'
+        hi: '100 डिग्री'
+      - en: '110 degrees'
+        hi: '110 डिग्री'
+      - en: '120 degrees'
+        hi: '120 डिग्री'
+      - en: '130 degrees'
+        hi: '130 डिग्री'
+    correct_index: 2
+    explanation:
+      en: 'Sum of angles is 360. 360 - (70 + 80 + 90) = 360 - 240 = 120.'
+      hi: 'कोणों का योग 360 है। 360 - (70 + 80 + 90) = 360 - 240 = 120.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-12'
+    skill: 'math-8-g-quads'
+    difficulty: 'medium'
+    text:
+      en: 'Which of these quadrilaterals has exactly one pair of parallel sides?'
+      hi: 'इनमें से किस चतुर्भुज में समानांतर भुजाओं का ठीक एक युग्म होता है?'
+    options:
+      - en: 'Parallelogram'
+        hi: 'समांतर चतुर्भुज'
+      - en: 'Rhombus'
+        hi: 'समचतुर्भुज'
+      - en: 'Trapezium'
+        hi: 'समलंब'
+      - en: 'Kite'
+        hi: 'पतंग'
+    correct_index: 2
+    explanation:
+      en: 'A trapezium (or trapezoid) has exactly one pair of parallel sides.'
+      hi: 'एक समलंब में समानांतर भुजाओं का ठीक एक युग्म होता है।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-13'
+    skill: 'math-8-g-angles'
+    difficulty: 'medium'
+    text:
+      en: 'The measure of an interior angle of a regular hexagon is:'
+      hi: 'एक सम षट्भुज के आंतरिक कोण का माप है:'
+    options:
+      - en: '108 degrees'
+        hi: '108 डिग्री'
+      - en: '120 degrees'
+        hi: '120 डिग्री'
+      - en: '135 degrees'
+        hi: '135 डिग्री'
+      - en: '150 degrees'
+        hi: '150 डिग्री'
+    correct_index: 1
+    explanation:
+      en: 'Sum = (6-2) * 180 = 720. Each angle = 720 / 6 = 120.'
+      hi: 'योग = (6-2) * 180 = 720. प्रत्येक कोण = 720 / 6 = 120.'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-14'
+    skill: 'math-8-g-quads'
+    difficulty: 'hard'
+    text:
+      en: 'Two adjacent angles of a parallelogram are in the ratio 4:5. What is their measure?'
+      hi: 'एक समांतर चतुर्भुज के दो आसन्न कोण 4:5 के अनुपात में हैं। उनका माप क्या है?'
+    options:
+      - en: '60 and 120 degrees'
+        hi: '60 और 120 डिग्री'
+      - en: '80 and 100 degrees'
+        hi: '80 और 100 डिग्री'
+      - en: '70 and 110 degrees'
+        hi: '70 और 110 डिग्री'
+      - en: '40 and 50 degrees'
+        hi: '40 और 50 डिग्री'
+    correct_index: 1
+    explanation:
+      en: 'Adjacent angles sum to 180. 4x + 5x = 180 -> 9x = 180 -> x = 20. Angles are 80 and 100.'
+      hi: 'आसन्न कोणों का योग 180 होता है। 4x + 5x = 180 -> 9x = 180 -> x = 20। कोण 80 और 100 हैं।'
+    provenance: 'Original'
+    review_status: 'draft'
+  - id: 'q-8-g-15'
+    skill: 'math-8-g-quads'
+    difficulty: 'easy'
+    text:
+      en: 'Which figure has equal adjacent sides and equal opposite angles, but is not necessarily a square?'
+      hi: 'किस आकृति में आसन्न भुजाएँ समान और सम्मुख कोण समान होते हैं, लेकिन यह आवश्यक नहीं कि वह एक वर्ग हो?'
+    options:
+      - en: 'Rectangle'
+        hi: 'आयत'
+      - en: 'Rhombus'
+        hi: 'समचतुर्भुज'
+      - en: 'Trapezium'
+        hi: 'समलंब'
+      - en: 'Kite'
+        hi: 'पतंग'
+    correct_index: 1
+    explanation:
+      en: 'A rhombus has equal sides. Its opposite angles are equal, but they are not necessarily 90 degrees.'
+      hi: 'एक समचतुर्भुज की भुजाएँ समान होती हैं। इसके सम्मुख कोण समान होते हैं, लेकिन उनका 90 डिग्री होना आवश्यक नहीं है।'
+    provenance: 'Original'
+    review_status: 'draft'

@@ -7,20 +7,17 @@
 
 Several key architectural and product decisions need to be finalized before building the respective modules.
 
-## D-01: Offline Sync Strategy
+## D-01: Naming (Decided)
+- Status: decided
+- Decision: The product name is Gyan Gullak. Gullak is the point system and wallet. 
 
-- Options: CRDTs, Event Sourcing with timestamp resolution, Simple Last-Write-Wins.
-- Recommendation: Event Sourcing since every event is an idempotent ledger entry that the server validates and recomputes.
+## D-02: Offline Spending (Decided)
+- Status: decided
+- Decision: Students cannot spend unsynced points. They can reserve an item and complete it at the hub later.
 
-## D-02: QR Code Data Format
-
-- Options: Plain JSON, Base64 Encoded JSON, Custom Binary Format.
-- Recommendation: Base64 Encoded JSON to balance debugging ease with spatial constraints.
-
-## D-03: Database Schema for Points Ledger
-
-- Options: Single append-only ledger table, snapshot tables, or both.
-- Recommendation: Single append-only ledger table to maintain I1 invariant strictly.
+## D-03: Hardware Roles (Decided)
+- Status: decided
+- Decision: Laptop runs the hub, tablet runs the student app.
 
 ## D-04: UI Framework/Component Library
 

@@ -1,0 +1,15 @@
+{
+  "choose_language": "Choose Language",
+  "continue": "Continue",
+  "scan_id_card": "Scan your ID card",
+  "type_link_code": "Or type link code",
+  "welcome": "Hello!",
+  "offline_mode": "Offline Mode",
+  "synced": "Synced",
+  "pending": "Pending",
+  "home": "Home",
+  "error_occurred": "An error occurred",
+  "hindi": "हिन्दी",
+  "english": "English",
+  "code_placeholder": "Code"
+}

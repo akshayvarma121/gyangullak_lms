@@ -1,0 +1,7 @@
+{
+  "name": "@chalk/supabase",
+  "private": true,
+  "dependencies": {
+    "@chalk/core": "workspace:*"
+  }
+}

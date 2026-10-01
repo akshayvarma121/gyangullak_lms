@@ -1,0 +1,15 @@
+{
+  "choose_language": "भाषा चुनें",
+  "continue": "आगे बढ़ें",
+  "scan_id_card": "अपना आईडी कार्ड स्कैन करें",
+  "type_link_code": "या लिंक कोड टाइप करें",
+  "welcome": "नमस्ते!",
+  "offline_mode": "ऑफ़लाइन मोड",
+  "synced": "सिंक हो गया",
+  "pending": "लंबित",
+  "home": "होम",
+  "error_occurred": "कुछ गलत हो गया",
+  "hindi": "हिन्दी",
+  "english": "English",
+  "code_placeholder": "कोड"
+}
