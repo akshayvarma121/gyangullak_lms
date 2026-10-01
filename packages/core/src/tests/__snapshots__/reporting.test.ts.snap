@@ -1,0 +1,65 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`e-Report Generator > should generate all-weak topics report 1`] = `
+"Hello! Here is the weekly progress for Aarav.
+
+They completed 3 quizzes and earned 20 points this week.
+
+They could use a little more practice in Geometry.
+
+Please encourage them to read the lesson text before starting a quiz!"
+`;
+
+exports[`e-Report Generator > should generate all-weak topics report 2`] = `
+"नमस्ते! यह Aarav की इस सप्ताह की प्रगति है।
+
+उन्होंने इस सप्ताह 3 क्विज़ पूरे किए और 20 पॉइंट कमाए हैं।
+
+उन्हें Geometry में थोड़े और अभ्यास की आवश्यकता है।
+
+कृपया क्विज़ शुरू करने से पहले उन्हें पाठ पढ़ने के लिए प्रोत्साहित करें!"
+`;
+
+exports[`e-Report Generator > should generate no activity report 1`] = `"Hello! Here is the weekly progress for Aarav. They did not complete any quizzes this week. Please remind them to practice!"`;
+
+exports[`e-Report Generator > should generate no activity report 2`] = `"नमस्ते! यह Aarav की इस सप्ताह की प्रगति है। उन्होंने इस सप्ताह कोई क्विज़ पूरा नहीं किया है। कृपया उन्हें अभ्यास करने की याद दिलाएं!"`;
+
+exports[`e-Report Generator > should generate perfect week report 1`] = `
+"Hello! Here is the weekly progress for Aarav.
+
+They completed 5 quizzes and earned 100 points this week.
+
+They did really well in Algebra.
+
+Please encourage them to read the lesson text before starting a quiz!"
+`;
+
+exports[`e-Report Generator > should generate perfect week report 2`] = `
+"नमस्ते! यह Aarav की इस सप्ताह की प्रगति है।
+
+उन्होंने इस सप्ताह 5 क्विज़ पूरे किए और 100 पॉइंट कमाए हैं।
+
+Algebra में उनका प्रदर्शन बहुत अच्छा रहा।
+
+कृपया क्विज़ शुरू करने से पहले उन्हें पाठ पढ़ने के लिए प्रोत्साहित करें!"
+`;
+
+exports[`e-Report Generator > should generate report for one quiz 1`] = `
+"Hello! Here is the weekly progress for Aarav.
+
+They completed 1 quizzes and earned 15 points this week.
+
+They could use a little more practice in Fractions.
+
+Please encourage them to read the lesson text before starting a quiz!"
+`;
+
+exports[`e-Report Generator > should generate report for one quiz 2`] = `
+"नमस्ते! यह Aarav की इस सप्ताह की प्रगति है।
+
+उन्होंने इस सप्ताह 1 क्विज़ पूरे किए और 15 पॉइंट कमाए हैं।
+
+उन्हें Fractions में थोड़े और अभ्यास की आवश्यकता है।
+
+कृपया क्विज़ शुरू करने से पहले उन्हें पाठ पढ़ने के लिए प्रोत्साहित करें!"
+`;

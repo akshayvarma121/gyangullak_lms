@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { generateKeypair } from '@chalk/core';
 import { supabase } from './supabase';
 import { setCredential } from './credentials';
 import { setSetting } from './db/store';
@@ -51,8 +52,21 @@ export function SetupWizard() {
       if (schoolError) throw schoolError;
       await setSetting('public_key', school.public_key);
 
-      // We'll sync roster and catalog separately or here.
-      // For now, let's just mark setup as complete.
+      // Generate device keypair for signing Hub events
+      const { privateKey, publicKey } = generateKeypair();
+      const deviceId = crypto.randomUUID();
+
+      await supabase.from('devices').insert({
+        id: deviceId,
+        kind: 'hub',
+        teacher_id: data.user.id,
+        public_key: publicKey,
+        status: 'active'
+      });
+
+      await setCredential('gyangullak_hub', 'device_id', deviceId);
+      await setCredential('gyangullak_hub', 'device_private_key', privateKey);
+
       await setSetting('setup_complete', 'true');
       
       navigate('/hub');

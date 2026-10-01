@@ -3,7 +3,6 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { FirstRunFlow } from './FirstRunFlow';
 import { useTranslation } from './i18n/Context';
 import { Preferences } from '@capacitor/preferences';
-import { Card } from '@chalk/ui';
 import { SyncBadge } from './components/SyncBadge';
 import { Library } from './Library';
 import { QuizRunner } from './QuizRunner';
@@ -14,7 +13,7 @@ import { ProgressWidget } from './ProgressWidget';
 import { brandConfig } from '@chalk/brand';
 
 function Home() {
-  const { t, lang } = useTranslation();
+  const { lang } = useTranslation();
   return (
     <div className="ui-p-4 ui-flex-col ui-gap-4">
       <div className="ui-flex-row ui-justify-between ui-items-center">
