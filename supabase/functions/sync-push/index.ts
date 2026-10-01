@@ -224,7 +224,94 @@ serve(async (req) => {
               .eq('id', evt.device_id);
           }
         }
-        // Handle gullak events here...
+        } else if (evt.kind === 'gullak.credit') {
+          const payload = evt.payload as any;
+          const { error: pErr } = await supabase
+            .from('points_ledger')
+            .insert({
+              student_id: evt.student_id,
+              delta: payload.amount,
+              reason: payload.reason,
+              source_event_id: evt.id,
+            });
+          if (pErr) throw new Error(pErr.message);
+        } else if (evt.kind === 'gullak.redeem') {
+          const payload = evt.payload as any;
+          // check stock? 
+          const { data: item } = await supabase
+            .from('marketplace_items')
+            .select('stock')
+            .eq('id', payload.item_id)
+            .single();
+            
+          if (item && item.stock < 1) {
+             throw new Error('Out of stock');
+          }
+
+          // deduct stock
+          if (item) {
+             await supabase.from('marketplace_items')
+                .update({ stock: item.stock - 1 })
+                .eq('id', payload.item_id);
+          }
+
+          const { error: pErr } = await supabase
+            .from('points_ledger')
+            .insert({
+              student_id: evt.student_id,
+              delta: -payload.amount,
+              reason: 'redeem',
+              source_event_id: evt.id,
+            });
+          if (pErr) throw new Error(pErr.message);
+
+          // log redemption
+          const { error: rErr } = await supabase
+            .from('redemptions')
+            .insert({
+               student_id: evt.student_id,
+               item_id: payload.item_id,
+               source_event_id: evt.id,
+            });
+          if (rErr) throw new Error(rErr.message);
+        } else if (evt.kind === 'gullak.reverse') {
+          const payload = evt.payload as any;
+          
+          // Look up original event in points_ledger
+          const { data: originalEntries } = await supabase
+            .from('points_ledger')
+            .select('delta, reason, quiz_id')
+            .eq('source_event_id', payload.original_event_id);
+
+          if (originalEntries && originalEntries.length > 0) {
+             for (const entry of originalEntries) {
+                // reverse the points
+                await supabase.from('points_ledger').insert({
+                   student_id: evt.student_id,
+                   delta: -entry.delta,
+                   reason: 'reverse: ' + entry.reason,
+                   source_event_id: evt.id,
+                   quiz_id: entry.quiz_id
+                });
+             }
+          }
+          
+          // Look up if it was a redemption
+          const { data: originalRedeem } = await supabase
+             .from('redemptions')
+             .select('item_id')
+             .eq('source_event_id', payload.original_event_id);
+             
+          if (originalRedeem && originalRedeem.length > 0) {
+             for (const red of originalRedeem) {
+                // return stock
+                const { data: item } = await supabase.from('marketplace_items').select('stock').eq('id', red.item_id).single();
+                if (item) {
+                   await supabase.from('marketplace_items').update({ stock: item.stock + 1 }).eq('id', red.item_id);
+                }
+             }
+          }
+        }
       } catch (err: any) {
         status = 'rejected';
         reject_reason = err.message || 'Unknown error';

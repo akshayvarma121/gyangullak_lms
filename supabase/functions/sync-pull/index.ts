@@ -47,13 +47,62 @@ serve(async (req) => {
           .from('students')
           .select('*')
           .eq('school_id', teacher.school_id);
-        roster = students || [];
+          
+        const balanceMap: Record<string, number> = {};
+        if (students && students.length > 0) {
+          const studentIds = students.map(s => s.id);
+          const { data: allPoints } = await supabase.from('points_ledger').select('student_id, delta').in('student_id', studentIds);
+          const { data: allRedeems } = await supabase.from('redemptions').select('student_id, marketplace_items(cost_points)').in('student_id', studentIds);
+          
+          for(const s of students) balanceMap[s.id] = 0;
+          if(allPoints) allPoints.forEach(p => balanceMap[p.student_id] += p.delta);
+          if(allRedeems) allRedeems.forEach(r => balanceMap[r.student_id] -= (r.marketplace_items as any).cost_points);
+        }
+
+        roster = students?.map(s => ({ ...s, confirmed_balance: balanceMap[s.id] || 0 })) || [];
 
         const { data: items } = await supabase
           .from('marketplace_items')
           .select('*')
           .eq('school_id', teacher.school_id);
         catalog = items || [];
+        
+        const { data: mastery } = await supabase
+          .from('skill_mastery')
+          .select('*');
+        
+        // Filter mastery to only students in this school
+        const rosterIds = new Set(roster.map((s: any) => s.id));
+        const skill_mastery = (mastery || []).filter((m: any) => rosterIds.has(m.student_id));
+        
+        const { data: skills } = await supabase.from('skills').select('id, name');
+        
+        // Fetch recent points history for drill-down (last 50 events for the school)
+        const { data: recentPoints } = await supabase
+          .from('points_ledger')
+          .select('id, student_id, delta, reason, created_at')
+          .in('student_id', Array.from(rosterIds))
+          .order('created_at', { ascending: false })
+          .limit(100);
+
+        const { data: guardians } = await supabase
+          .from('guardians')
+          .select('id, student_id, phone_number, has_consent, consent_timestamp')
+          .in('student_id', Array.from(rosterIds));
+
+        return new Response(
+          JSON.stringify({
+            contentVersions: contentVersions || [],
+            roster,
+            catalog,
+            skill_mastery,
+            skills: skills || [],
+            points_history: recentPoints || [],
+            guardians: guardians || [],
+            confirmed_balance,
+          }),
+          { status: 200, headers: { 'Content-Type': 'application/json' } },
+        );
       }
     } else {
       // Student app

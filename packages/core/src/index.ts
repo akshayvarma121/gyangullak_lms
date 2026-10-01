@@ -4,5 +4,8 @@ export * from './crypto/qr.js';
 export * from './events/schema.js';
 export * from './events/chain.js';
 export * from './scoring/index.js';
+export * from './scoring/mastery.js';
 export * from './sync/store.js';
 export * from './sync/machine.js';
+export * from './reporting/generator.js';
+export * from './reporting/templates.js';
