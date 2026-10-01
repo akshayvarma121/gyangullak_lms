@@ -4,8 +4,6 @@ import { useTranslation } from './i18n/Context';
 import { Card, Button } from '@chalk/ui';
 import contentBundle from '@chalk/content/dist/content.json';
 import { Preferences } from '@capacitor/preferences';
-import { dbStore } from './db/store';
-import { sign, getSignableMessage, LedgerEvent } from '@chalk/core';
 
 export function QuizRunner() {
   const { chapterId } = useParams<{ chapterId: string }>();
@@ -18,7 +16,7 @@ export function QuizRunner() {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showExplanation, setShowExplanation] = useState(false);
-  const [isFinished, setIsFinished] = useState(false);
+  const [isFinished] = useState(false);
 
   // Resume state
   useEffect(() => {
@@ -85,9 +83,6 @@ export function QuizRunner() {
         throw new Error('Missing keys');
       }
 
-      // We need to fetch last event to get seq and prev_hash
-      const lastEvent = await dbStore.getLastEvent();
-      const seq = lastEvent ? lastEvent.seq + 1 : 0;
       // We don't have getEventHash exposed directly unless we import it, wait getSignableMessage doesn't hash
       // Actually we just import hashString from core maybe, or we use getEventHash.
 

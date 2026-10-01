@@ -5,8 +5,8 @@ import { Preferences } from '@capacitor/preferences';
 import { Network } from '@capacitor/network';
 import { App } from '@capacitor/app';
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'http://localhost:54321';
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'your-anon-key';
+const SUPABASE_URL = (import.meta as any).env.VITE_SUPABASE_URL || 'http://localhost:54321';
+const SUPABASE_ANON_KEY = (import.meta as any).env.VITE_SUPABASE_ANON_KEY || 'your-anon-key';
 
 let isOnline = false;
 
@@ -192,7 +192,7 @@ class FullSyncEngine {
           const currentVersionRes = await Preferences.get({ key: 'content_version' });
           if (currentVersionRes.value !== latest.version) {
              const networkStatus = await Network.getStatus();
-             const isUnmetered = networkStatus.connectionType === 'wifi' || networkStatus.connectionType === 'ethernet';
+             const isUnmetered = networkStatus.connectionType === 'wifi' || (networkStatus.connectionType as string) === 'ethernet';
              const allowMobileRes = await Preferences.get({ key: 'allow_mobile_data' });
              
              if (isUnmetered || allowMobileRes.value === 'true') {
@@ -206,7 +206,7 @@ class FullSyncEngine {
     }
   }
 
-  private async downloadContent(url: string, version: string, expectedHash: string) {
+  private async downloadContent(url: string, version: string, _expectedHash: string) {
     try {
       // Basic resumable fetch (simplified range request if partially downloaded)
       const partialRes = await Preferences.get({ key: `partial_content_${version}` });

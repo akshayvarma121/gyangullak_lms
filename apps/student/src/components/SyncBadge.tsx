@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { syncEngine } from '../sync/engine';
 import { useTranslation } from '../i18n/Context';
 
@@ -10,7 +10,7 @@ export function SyncBadge() {
   const [rejections, setRejections] = useState<string[]>([]);
 
   useEffect(() => {
-    return syncEngine.subscribe((s, p, l) => {
+    const unsubscribe = syncEngine.subscribe((s, p, l) => {
       setStatus(s);
       setPendingCount(p);
       setLastSyncTime(l);
@@ -27,6 +27,9 @@ export function SyncBadge() {
         });
       });
     });
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   const handleSyncNow = () => {

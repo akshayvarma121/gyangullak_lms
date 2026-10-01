@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from './i18n/Context';
 import { Card, Button } from '@chalk/ui';
 import contentBundle from '@chalk/content/dist/content.json';
-import { Preferences } from '@capacitor/preferences';
 
 export function Library() {
   const { t, lang } = useTranslation();
