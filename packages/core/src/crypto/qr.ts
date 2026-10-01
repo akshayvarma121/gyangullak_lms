@@ -1,6 +1,5 @@
 import { sign, verify } from './ed25519.js';
 import { canonicalize } from './canonical.js';
-import { utf8ToBytes } from '@noble/hashes/utils.js';
 
 export interface QRTokenPayload {
   school_id: string;
@@ -45,7 +44,7 @@ export function generateQRToken(
   const signature = sign(msg, schoolPrivateKeyHex);
   const token: SignedQRToken = { payload, signature };
   const tokenStr = JSON.stringify(token);
-  return base64urlEncode(utf8ToBytes(tokenStr));
+  return base64urlEncode(new TextEncoder().encode(tokenStr));
 }
 
 export function verifyQRToken(

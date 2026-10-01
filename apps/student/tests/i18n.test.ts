@@ -1,10 +1,12 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'fs';
-import { globSync } from 'glob';
+import { readFileSync, readdirSync } from 'fs';
 
 describe('i18n', () => {
   it('should not contain hardcoded strings in JSX', () => {
-    const files = globSync('src/**/*.tsx', { cwd: __dirname + '/..' });
+    const srcDir = __dirname + '/../src';
+    const files = readdirSync(srcDir, { recursive: true })
+      .filter((f: any) => typeof f === 'string' && f.endsWith('.tsx'))
+      .map((f: any) => 'src/' + f.replace(/\\/g, '/'));
     
     // Match simple English strings inside JSX tags like >Hello<
     const hardcodedRegex = />([A-Za-z][a-zA-Z\s]*)<\//g;

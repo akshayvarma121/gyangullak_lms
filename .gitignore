@@ -13,3 +13,4 @@ known_limitations_and_open_q.md
 AGENTS.md
 STATE.md
 .agents/
+docs/adr/

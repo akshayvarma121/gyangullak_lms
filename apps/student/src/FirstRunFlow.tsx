@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from './i18n/Context';
 import { Button, Card } from '@chalk/ui';
-import { Camera } from '@capacitor/camera';
 import { useNavigate } from 'react-router-dom';
 import { Preferences } from '@capacitor/preferences';
 import { generateKeypair } from '@chalk/core';
@@ -19,16 +18,7 @@ export function FirstRunFlow() {
   };
 
   const handleScan = async () => {
-    try {
-      const permission = await Camera.requestPermissions();
-      if (permission.camera !== 'granted') {
-        setFallback(true);
-        return;
-      }
-      setFallback(true);
-    } catch (err) {
-      setFallback(true);
-    }
+    setFallback(true);
   };
 
   const handleSubmitCode = async () => {
