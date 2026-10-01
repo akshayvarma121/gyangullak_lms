@@ -1,6 +1,6 @@
 # Database Schema
 
-Below is the Entity-Relationship diagram of the core tables for the `chalk` project.
+Below is the Entity-Relationship diagram of the core tables for the `Gyann Gullak` project.
 
 ```mermaid
 erDiagram

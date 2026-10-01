@@ -10,7 +10,7 @@ export const EventKind = z.enum([
 
 export const QuizAttemptPayload = z.object({
   // eslint-disable-next-line @typescript-eslint/no-deprecated
-  quiz_id: z.string().uuid(),
+  quiz_id: z.string(),
   answers: z.record(z.string(), z.string()),
 });
 

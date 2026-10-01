@@ -3,7 +3,13 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { FirstRunFlow } from './FirstRunFlow';
 import { useTranslation } from './i18n/Context';
 import { Preferences } from '@capacitor/preferences';
-import { SyncBadge, Card } from '@chalk/ui';
+import { Card } from '@chalk/ui';
+import { SyncBadge } from './components/SyncBadge';
+import { Library } from './Library';
+import { QuizRunner } from './QuizRunner';
+import { ResultsScreen } from './ResultsScreen';
+
+import { ProgressWidget } from './ProgressWidget';
 
 import { brandConfig } from '@chalk/brand';
 
@@ -13,12 +19,10 @@ function Home() {
     <div className="ui-p-4 ui-flex-col ui-gap-4">
       <div className="ui-flex-row ui-justify-between ui-items-center">
         <h1 className="ui-text-2xl">{brandConfig.productName[lang]}</h1>
-        <SyncBadge state="offline" />
       </div>
-      <Card>
-        <h2 className="ui-text-xl ui-mb-2">{t('welcome')}</h2>
-        <p style={{ margin: 0 }}>{t('offline_mode')}</p>
-      </Card>
+      <SyncBadge />
+      <ProgressWidget />
+      <Library />
     </div>
   );
 }
@@ -41,6 +45,9 @@ export function App() {
   return (
     <Routes>
       <Route path="/setup" element={<FirstRunFlow />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/quiz/:chapterId" element={<QuizRunner />} />
+      <Route path="/results/:chapterId" element={<ResultsScreen />} />
       <Route path="/*" element={<Home />} />
     </Routes>
   );

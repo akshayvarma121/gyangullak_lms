@@ -7,3 +7,9 @@ build/
 *.jks
 .DS_Store
 coverage/
+known_limitations_and_open_q.md
+
+# Agent and Meta files
+AGENTS.md
+STATE.md
+.agents/
