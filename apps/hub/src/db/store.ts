@@ -31,7 +31,8 @@ export async function initDb() {
       id TEXT PRIMARY KEY,
       first_name TEXT NOT NULL,
       class_name TEXT NOT NULL,
-      roll_number TEXT NOT NULL
+      roll_number TEXT NOT NULL,
+      confirmed_balance INTEGER DEFAULT 0
     )
   `);
 
@@ -51,6 +52,48 @@ export async function initDb() {
       description TEXT,
       points_cost INTEGER NOT NULL,
       stock INTEGER NOT NULL
+    )
+  `);
+  
+  // Skill mastery table
+  await db.execute(`
+    CREATE TABLE IF NOT EXISTS skill_mastery (
+      student_id TEXT NOT NULL,
+      skill_id TEXT NOT NULL,
+      attempts INTEGER NOT NULL,
+      correct INTEGER NOT NULL,
+      last_attempt TEXT,
+      PRIMARY KEY (student_id, skill_id)
+    )
+  `);
+  
+  // Skills table
+  await db.execute(`
+    CREATE TABLE IF NOT EXISTS skills (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL
+    )
+  `);
+
+  // Points History table
+  await db.execute(`
+    CREATE TABLE IF NOT EXISTS points_history (
+      id TEXT PRIMARY KEY,
+      student_id TEXT NOT NULL,
+      delta INTEGER NOT NULL,
+      reason TEXT NOT NULL,
+      created_at TEXT NOT NULL
+    )
+  `);
+
+  // Guardians table
+  await db.execute(`
+    CREATE TABLE IF NOT EXISTS guardians (
+      id TEXT PRIMARY KEY,
+      student_id TEXT NOT NULL UNIQUE,
+      phone_number TEXT NOT NULL,
+      has_consent INTEGER NOT NULL DEFAULT 0,
+      consent_timestamp TEXT
     )
   `);
 
