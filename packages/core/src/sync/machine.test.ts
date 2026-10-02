@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
-import { SyncMachine, Transport, RNG } from './machine.js';
-import { InMemoryLedgerStore } from './store.js';
-import { LedgerEvent } from '../events/schema.js';
+import { SyncMachine, Transport, RNG } from './machine.ts';
+import { InMemoryLedgerStore } from './store.ts';
+import { LedgerEvent } from '../events/schema.ts';
 
 describe('SyncMachine', () => {
   const dummyEvent: LedgerEvent = {

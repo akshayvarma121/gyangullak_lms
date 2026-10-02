@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { calculateMastery, DEFAULT_MASTERY_CONFIG } from '../scoring/mastery.js';
+import { calculateMastery, DEFAULT_MASTERY_CONFIG } from '../scoring/mastery.ts';
 
 describe('calculateMastery', () => {
   it('should return not_enough_data if attempts are below minimum', () => {

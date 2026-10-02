@@ -43,7 +43,7 @@ export function Approvals() {
           teachers(first_name, last_name, email),
           students(first_name, class_name)
         `)
-        .eq('status', 'pending')
+        .in('status', ['pending', 'active'])
         .order('registered_at', { ascending: false });
 
       if (error) throw error;
@@ -98,11 +98,11 @@ export function Approvals() {
       {error && <div className="ui-text-red-600 ui-bg-red-50 ui-p-4 ui-rounded">{error}</div>}
       
       {loading ? (
-        <p>Loading pending devices...</p>
+        <p>Loading devices...</p>
       ) : (
         <div className="ui-flex-col ui-gap-4">
           {devices.length === 0 ? (
-            <p className="ui-text-gray-500">No pending devices to approve.</p>
+            <p className="ui-text-gray-500">No devices to manage.</p>
           ) : (
             devices.map(device => (
               <Card key={device.id} className="ui-flex ui-justify-between ui-items-center">
@@ -126,11 +126,17 @@ export function Approvals() {
                     Requested on: {new Date(device.registered_at).toLocaleString()}
                   </div>
                 </div>
-                <div className="ui-flex ui-gap-2">
-                  <Button onClick={() => handleApprove(device.id)} className="ui-bg-green-600">Approve</Button>
-                  <Button onClick={() => handleReject(device.id)} className="ui-bg-red-600">Reject</Button>
-                </div>
-              </Card>
+                  <div className="ui-flex ui-gap-2">
+                    {device.status === 'pending' ? (
+                      <>
+                        <Button onClick={() => handleApprove(device.id)} className="ui-bg-green-600">Approve</Button>
+                        <Button onClick={() => handleReject(device.id)} className="ui-bg-red-600">Reject</Button>
+                      </>
+                    ) : (
+                      <Button onClick={() => handleReject(device.id)} className="ui-bg-red-600">Revoke Access</Button>
+                    )}
+                  </div>
+                </Card>
             ))
           )}
         </div>

@@ -5,8 +5,8 @@ import {
   getEventHash,
   getSignableMessage,
 } from './chain.js';
-import { LedgerEvent, LedgerEventSchema } from './schema.js';
-import { generateKeypair, sign } from '../crypto/ed25519.js';
+import { LedgerEvent, LedgerEventSchema } from './schema.ts';
+import { generateKeypair, sign } from '../crypto/ed25519.ts';
 
 describe('Event Chain', () => {
   it('should parse valid schema', () => {

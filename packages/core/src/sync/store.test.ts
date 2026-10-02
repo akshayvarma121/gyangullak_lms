@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { InMemoryLedgerStore } from './store.js';
-import { LedgerEvent } from '../events/schema.js';
+import { InMemoryLedgerStore } from './store.ts';
+import { LedgerEvent } from '../events/schema.ts';
 
 describe('InMemoryLedgerStore', () => {
   const dummyEvent: LedgerEvent = {

@@ -6,7 +6,7 @@ const supabaseUrl = Deno.env.get('SUPABASE_URL') ?? '';
 const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '';
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-serve(async (req) => {
+serve(async (req: Request) => {
   if (req.method !== 'POST') {
     return new Response('Method Not Allowed', { status: 405 });
   }
@@ -58,8 +58,19 @@ serve(async (req) => {
       Deno.env.get('SCHOOL_PRIVATE_KEY_HEX') ??
       '0000000000000000000000000000000000000000000000000000000000000000';
 
+    const issued_at = new Date().toISOString();
+
+    // Update all students to rotate tokens
+    const { error: updateError } = await supabase
+      .from('students')
+      .update({ card_issued_after: issued_at })
+      .eq('class_id', class_id);
+      
+    if (updateError) {
+      throw updateError;
+    }
+
     const cards = students?.map((student) => {
-      const issued_at = new Date().toISOString();
 
       const qrPayload = {
         school_id: teacher.school_id,

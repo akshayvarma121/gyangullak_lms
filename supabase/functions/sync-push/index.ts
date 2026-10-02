@@ -144,16 +144,45 @@ serve(async (req) => {
       let status = 'accepted';
       let reject_reason = null;
 
+      // Insert event first so foreign keys can reference it
+      const { error: insertErr } = await supabase.from('ledger_events').insert({
+        id: evt.id,
+        device_id: evt.device_id,
+        event_type: evt.kind,
+        payload: Object.assign({}, evt, { signature: undefined }), // store all envelope in payload
+        signature: evt.signature,
+        status: 'accepted',
+      });
+      if (insertErr) {
+         results.push({ id: evt.id, status: 'rejected', reason: insertErr.message });
+         continue;
+      }
+
       try {
+        // Timestamp sanity checks
+        const evtTs = new Date(evt.client_ts).getTime();
+        const now = Date.now();
+        // Reject if more than 1 hour in the future
+        if (evtTs > now + 60 * 60 * 1000) {
+           throw new Error('Timestamp in future');
+        }
+        // Reject if more than 30 days in the past
+        if (evtTs < now - 30 * 24 * 60 * 60 * 1000) {
+           throw new Error('Timestamp too old');
+        }
+
         if (evt.kind === 'quiz.attempt') {
           const payload = evt.payload as any;
           // fetch correct answers
-          const { data: questions } = await supabase
+          const { data: questions, error: qErr } = await supabase
             .from('questions')
             .select('id, correct_answer')
             .eq('quiz_id', payload.quiz_id);
+          if (qErr) {
+            console.error('Questions Error:', qErr);
+          }
           if (!questions || questions.length === 0) {
-            throw new Error('Quiz not found or empty');
+            throw new Error('Quiz not found or empty for quiz_id: ' + payload.quiz_id + ' | ' + JSON.stringify(questions));
           }
           const qAnswers = questions.map((q) => ({
             question_id: q.id,
@@ -223,7 +252,6 @@ serve(async (req) => {
               .update({ student_id: evt.student_id })
               .eq('id', evt.device_id);
           }
-        }
         } else if (evt.kind === 'gullak.credit') {
           const payload = evt.payload as any;
           const { error: pErr } = await supabase
@@ -317,16 +345,11 @@ serve(async (req) => {
         reject_reason = err.message || 'Unknown error';
       }
 
-      // Store event
-      await supabase.from('ledger_events').insert({
-        id: evt.id,
-        device_id: evt.device_id,
-        event_type: evt.kind,
-        payload: Object.assign({}, evt, { signature: undefined }), // store all envelope in payload
-        signature: evt.signature,
+      // Update event
+      await supabase.from('ledger_events').update({
         status,
         reject_reason,
-      });
+      }).eq('id', evt.id);
 
       results.push({ id: evt.id, status, reason: reject_reason });
     }

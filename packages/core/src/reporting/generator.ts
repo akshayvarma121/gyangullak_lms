@@ -1,4 +1,4 @@
-import { reportTemplates } from './templates';
+import { reportTemplates } from './templates.ts';
 
 export interface StudentWeekData {
   studentName: string;

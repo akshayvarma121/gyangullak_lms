@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { generateKeypair, sign, verify, hashString } from './ed25519.js';
+import { generateKeypair, sign, verify, hashString } from './ed25519.ts';
 
 describe('ed25519 helpers', () => {
   it('should generate valid keypair', () => {

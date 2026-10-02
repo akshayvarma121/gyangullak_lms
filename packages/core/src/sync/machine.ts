@@ -1,5 +1,5 @@
-import { LedgerEvent } from '../events/schema.js';
-import { LedgerStore } from './store.js';
+import { LedgerEvent } from '../events/schema.ts';
+import { LedgerStore } from './store.ts';
 
 export type SyncState = 'idle' | 'syncing' | 'backoff' | 'offline' | 'error';
 

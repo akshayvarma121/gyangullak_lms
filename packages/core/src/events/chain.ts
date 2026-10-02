@@ -1,6 +1,6 @@
-import { LedgerEvent } from './schema.js';
-import { canonicalize } from '../crypto/canonical.js';
-import { hashString, verify } from '../crypto/ed25519.js';
+import { LedgerEvent } from './schema.ts';
+import { canonicalize } from '../crypto/canonical.ts';
+import { hashString, verify } from '../crypto/ed25519.ts';
 
 export function getEventHash(event: LedgerEvent): string {
   const clone = { ...event };

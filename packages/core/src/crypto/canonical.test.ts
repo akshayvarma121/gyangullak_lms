@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import fc from 'fast-check';
-import { canonicalize } from './canonical.js';
+import { canonicalize } from './canonical.ts';
 
 describe('canonicalize', () => {
   it('should correctly canonicalize simple values', () => {

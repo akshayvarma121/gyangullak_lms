@@ -14,3 +14,6 @@ AGENTS.md
 STATE.md
 .agents/
 docs/adr/
+supabase/.temp/
+supabase/.branches/
+supabase/*.temp

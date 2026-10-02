@@ -1,5 +1,5 @@
-import { sign, verify } from './ed25519.js';
-import { canonicalize } from './canonical.js';
+import { sign, verify } from './ed25519.ts';
+import { canonicalize } from './canonical.ts';
 
 export interface QRTokenPayload {
   school_id: string;

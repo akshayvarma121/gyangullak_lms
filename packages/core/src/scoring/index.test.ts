@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { scoreAttempt, ScoringConfig, QuestionAnswer } from './index.js';
+import { scoreAttempt, ScoringConfig, QuestionAnswer } from './index.ts';
 
 describe('scoreAttempt', () => {
   const config: ScoringConfig = {

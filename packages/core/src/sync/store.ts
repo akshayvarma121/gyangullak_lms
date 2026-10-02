@@ -1,4 +1,4 @@
-import { LedgerEvent } from '../events/schema.js';
+import { LedgerEvent } from '../events/schema.ts';
 
 export interface LedgerStore {
   appendEvent(event: LedgerEvent): Promise<void>;

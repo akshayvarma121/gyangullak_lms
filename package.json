@@ -12,7 +12,9 @@
     "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm check:names && pnpm test",
     "check:names": "node scripts/check-names.js",
     "content:validate": "pnpm -F @chalk/content run validate",
-    "content:build": "pnpm -F @chalk/content run build"
+    "content:build": "pnpm -F @chalk/content run build",
+    "redteam": "vitest run supabase/tests/integration.test.ts",
+    "audit:secrets": "node scripts/audit-secrets.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",
@@ -22,7 +24,7 @@
     "supabase": "^2.118.0",
     "typescript": "^5.0.0",
     "typescript-eslint": "^8.0.0",
-    "vitest": "^2.0.0"
+    "vitest": "^5.0.3"
   },
   "engines": {
     "node": ">=20.0.0",

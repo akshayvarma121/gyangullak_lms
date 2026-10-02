@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { generateKeypair } from './ed25519.js';
-import { generateQRToken, verifyQRToken, generateLinkCode } from './qr.js';
+import { generateKeypair } from './ed25519.ts';
+import { generateQRToken, verifyQRToken, generateLinkCode } from './qr.ts';
 import { hexToBytes } from '@noble/hashes/utils.js';
 
 describe('QR and Link Code', () => {
